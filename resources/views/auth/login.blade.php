@@ -36,9 +36,10 @@
                     <div class="col-md-8 col-lg-6 col-xxl-3">
                         <div class="card mb-0">
                             <div class="card-body">
-                                <a href="{{ url('/') }}" class="text-nowrap logo-img text-center d-block mb-5 w-100">
-                                    <img src="{{ asset('assets/front/img/logo.jpg') }}"
-                                        width="180" alt="">
+                                <a href="{{ url('/') }}" class="text-center d-block mb-5 w-100">
+                                    <h1 class="text-primary fw-bold" style="font-size: 2.5rem;">
+                                        <i class="ti ti-calendar-event me-2"></i>Masa Tera
+                                    </h1>
                                 </a>
                                 <div class="position-relative text-center my-4">
                                     <p class="mb-0 fs-4 px-3 d-inline-block bg-white text-dark z-index-5 position-relative">

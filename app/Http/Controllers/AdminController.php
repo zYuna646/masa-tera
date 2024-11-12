@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alat;
 use App\Models\Catalog;
 use App\Models\Category;
 use App\Models\Information;
+use App\Models\Tipe;
 use App\Models\User;
 use App\Models\Video;
 use Illuminate\Http\Request;
@@ -17,11 +19,13 @@ class AdminController extends Controller
         $count_category = Category::count();
         $count_video = Video::count();
         $count_information = Information::count();
-
+        $count_alat = Alat::count();
+        $count_tipe = Tipe::count();
+    
         $latest_products = Catalog::orderBy('created_at', 'desc')->take(5)->get();
         $latest_video = Video::orderBy('created_at', 'desc')->take(1)->first();
         $latest_informations = Information::orderBy('created_at', 'desc')->take(3)->get();
-
+    
         return view('admin.dashboard', [
             'title' => 'Dashboard',
             'subtitle' => '',
@@ -30,11 +34,14 @@ class AdminController extends Controller
             'count_category' => $count_category,
             'count_video' => $count_video,
             'count_information' => $count_information,
+            'count_alat' => $count_alat,
+            'count_tipe' => $count_tipe,
             'latest_products' => $latest_products,
             'latest_video' => $latest_video,
             'latest_informations' => $latest_informations,
         ]);
     }
+    
 
     public function accountSetting()
     {
